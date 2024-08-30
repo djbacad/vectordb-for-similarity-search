@@ -17,7 +17,7 @@ This project demonstrates how to perform similarity search using sentence embedd
 - Persistent Storage: ChromaDB is configured to persistently store embeddings for future queries.
 
 ### Files Overview:
-embedder.py: Handles the embedding of text data using a pre-trained SentenceTransformer model.
-chroma_db_manager.py: Manages storing and querying embeddings in ChromaDB, with support for batch processing.
-db_storer.py: Stores embeddings in ChromaDB persistently.
-run.py: Queries ChromaDB for similar entries based on user input.
+- embedder.py: Handles the embedding of text data using a pre-trained SentenceTransformer model.
+- chroma_db_manager.py: Manages storing and querying embeddings in ChromaDB, with support for batch processing.
+- db_storer.py: Stores embeddings in ChromaDB persistently.
+- run.py: Queries ChromaDB for similar entries based on user input.
