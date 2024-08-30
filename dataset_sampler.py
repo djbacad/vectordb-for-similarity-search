@@ -4,7 +4,7 @@ import pandas as pd
 df = pd.read_csv('datasets/questions.csv')
 
 # Sample 5000 rows
-df_sampled = df.sample(n=5000, random_state=42)
+df_sampled = df.sample(n=55, random_state=43)
 
 # Save the sampled data to a new CSV file
 df_sampled.to_csv('datasets/questions_sampled.csv', index=False)

@@ -8,10 +8,12 @@ class ChromaDBManager:
 
     def add_embeddings(self, embeddings, texts):
         ids = [str(uuid.uuid4()) for _ in range(len(texts))]  # Generate unique IDs for each text
+        metadatas = [{"question": text} for text in texts]
+        # Adding documents and IDs to the collection
         self.collection.add(
             ids=ids,
             embeddings=embeddings,
-            metadatas=[{"question": text} for text in texts]
+            metadatas=metadatas
         )
 
     def query_embeddings(self, query_embedding, n_results=5):
