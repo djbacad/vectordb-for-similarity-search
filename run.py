@@ -13,8 +13,9 @@ def main(question):
     similar_questions = chroma_db_manager.query_embeddings(query_embedding)
 
     # Display the results
+    print("Similar/Related Questions")
     for i, question in enumerate(similar_questions, 1):
-        print(f"Similar/Related Question {i}: {question}")
+        print(f"{i}: {question}")
 
 if __name__ == "__main__":
     # Set up argument parsing
