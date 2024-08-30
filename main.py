@@ -1,6 +1,6 @@
 import pandas as pd
-from models.embedder import Embedder
-from db.chroma_db import ChromaDBManager
+from embedder import Embedder
+from chroma_db_manager import ChromaDBManager
 
 def load_data(file_path):
     df = pd.read_csv(file_path)
@@ -13,13 +13,17 @@ def main():
     questions = load_data(file_path)
     
     # Initialize the embedder and ChromaDB manager
+    print("Initializing Embedder... ⌛")
     embedder = Embedder()
+    print("Starting ChromaDB Manager... ⌛")
     chroma_db_manager = ChromaDBManager(collection_name="quora_questions")
 
     # Generate embeddings
+    print("Generating Embeddings... ⌛")
     embeddings = embedder.encode(questions)
 
     # Store embeddings in ChromaDB
+    print("Storing Embeddings in ChromaDB... ⌛")
     chroma_db_manager.add_embeddings(embeddings, questions)
 
     # Example query
