@@ -5,6 +5,8 @@ import warnings
 # Suppress all warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
+print("Querying...⌛")
+
 def main(question):
     # Initialize the embedder and ChromaDB manager
     embedder = Embedder(model_name='sentence-transformers/all-MiniLM-L6-v2')
@@ -16,6 +18,7 @@ def main(question):
     print("Similar/Related Questions")
     for i, question in enumerate(similar_questions, 1):
         print(f"{i}: {question}")
+    print("Done ✅")
 
 if __name__ == "__main__":
     # Set up argument parsing
