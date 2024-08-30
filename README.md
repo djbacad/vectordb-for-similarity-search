@@ -9,7 +9,7 @@ Similarity Search w/ Sentence Transformers and Chroma Vector DB
 ###### Sample search for similarity 2:
 ![run2](https://github.com/user-attachments/assets/f91d09a9-48bd-4155-b41f-f9627407b9c9)
 
-This project demonstrates how to perform similarity search using sentence embeddings with ChromaDB as the vector database. The example uses the Quora Question Pairs dataset (sampled for faster processing/demonstration) to showcase how to embed text data and query for similar entries.
+This project demonstrates how to perform similarity search using sentence embeddings with ChromaDB as the vector database. The example uses the Quora Question Pairs dataset (sampled for faster processing) to showcase how to embed text data and query for similar entries.
 
 ### Project Highlights:
 - Sentence Embeddings: Utilizing the sentence-transformers library, specifically the all-MiniLM-L6-v2 model, to generate dense vector representations of text.
