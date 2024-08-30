@@ -14,12 +14,11 @@ def main():
     
     # Initialize the embedder and ChromaDB manager
     print("Initializing Embedder... ⌛")
-    embedder = Embedder()
+    embedder = Embedder(model_name='sentence-transformers/all-MiniLM-L6-v2')
     print("Starting ChromaDB Manager... ⌛")
     chroma_db_manager = ChromaDBManager(collection_name="quora_questions")
 
     # Generate embeddings
-    print("Generating Embeddings... ⌛")
     embeddings = embedder.encode(questions)
 
     # Store embeddings in ChromaDB
