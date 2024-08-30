@@ -9,20 +9,21 @@ def load_data(file_path):
 
 def main():
     # Load and preprocess the data
-    file_path = 'datasets/questions.csv'
+    file_path = 'datasets/questions_sampled.csv'
     questions = load_data(file_path)
     
     # Initialize the embedder and ChromaDB manager
-    print("Initializing Embedder... ⌛")
+    print("Initializing Embedder...⌛")
     embedder = Embedder(model_name='sentence-transformers/all-MiniLM-L6-v2')
-    print("Starting ChromaDB Manager... ⌛")
+    print("Starting ChromaDB Manager...⌛")
     chroma_db_manager = ChromaDBManager(collection_name="quora_questions")
 
     # Generate embeddings
+    print("Generating Embeddings in ChromaDB...⌛")
     embeddings = embedder.encode(questions)
 
     # Store embeddings in ChromaDB
-    print("Storing Embeddings in ChromaDB... ⌛")
+    print("Storing Embeddings in ChromaDB...⌛")
     chroma_db_manager.add_embeddings(embeddings, questions)
 
     # Example query

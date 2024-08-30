@@ -10,7 +10,7 @@ class ChromaDBManager:
         ids = [str(uuid.uuid4()) for _ in range(len(texts))]  # Generate unique IDs for each text
         self.collection.add(
             ids=ids,
-            embeddings=embeddings.tolist(),
+            embeddings=embeddings,
             metadatas=[{"question": text} for text in texts]
         )
 

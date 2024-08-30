@@ -9,14 +9,10 @@ class Embedder:
     # Method for single input
     def encode_single(self, text):
         return self.model.encode([text], convert_to_tensor=True)
-
-    # # Method for multiple inputs
-    # def encode(self, texts):
-    #     return self.model.encode(texts, convert_to_tensor=True)
-    
+ 
     def encode(self, texts):
         embeddings = []
-        for text in tqdm(texts, desc="Generating Embeddings", unit="text"):
+        for text in tqdm(texts, desc="", unit="text"):
             embedding = self.model.encode(text, convert_to_tensor=True)
             embeddings.append(embedding)
         return embeddings
