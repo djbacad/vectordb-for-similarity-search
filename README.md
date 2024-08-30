@@ -1,4 +1,5 @@
 Similarity Search w/ Sentence Transformers and Chroma Vector DB
+===============================================================
 
 ##### GIF Demos:
 ###### Storing embeddings to vector db
